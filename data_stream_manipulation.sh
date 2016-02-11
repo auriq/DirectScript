@@ -16,5 +16,11 @@ echo "####Command 4: stream data to stdout####"
 ess stream log '*' '*'
 
 echo "##########################################"
-echo "####Command 4: stream data to csv file####"
+echo "####Command 5: stream data count lines####"
+ess stream log 2014-07-01 '*' 'wc -l'
+
+echo "################################################################################################"
+echo "####Command 6: stream data to csv file,saved in UI home directory: /var/www/html/mydmp/aws/1####"
 ess stream log '*' '*' 'aq_pp -f,+1r,eok - -d %cols -o log.csv'
+
+
