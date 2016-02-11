@@ -13,7 +13,7 @@ echo "####Command 3: show category summary####"
 ess summary purchase 
 
 echo "###################################################"
-echo "####Command 4: sql-like query select all column####
+echo "####Command 4: sql-like query select all column####"
 ess query "select * from purchase:2014-09-01:2014-09-02" 
 
 echo "##########################################################"               
