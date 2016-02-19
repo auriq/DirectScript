@@ -5,11 +5,15 @@ ess select s3://asi-essentiapublic --aws_access_key AKIAJJ2NEBGDF7I7FVZA --aws_s
 
 echo "####################################"
 echo "####Command 2: create a category####"
-ess category add log 'dateformat/20140701000006am.log' --dateregex='[:%Y:][:%m:][:%d:][:%H:][:%M:][:%S:][:%p:]' --preprocess='logcnv -f,eok,qui - -d ip:ip sep:" " s:rlog sep:" " s:rusr sep:" [" i,tim:time sep:"] \"" s,clf:req_line1 sep:" " s,clf:req_line2 sep:" " s,clf:req_line3 sep:"\" " i:res_status sep:" " i:res_size sep:" \"" s,clf:referrer sep:"\" \"" s,clf:user_agent sep:"\""' --overwrite
+ess category add log 'dateformat/2014*' --dateregex=[:%Y:][:%m:][:%d:][:%H:][:%M:][:%S:][:%p:]* --preprocess='logcnv -f,eok,qui - -d ip:ip sep:" " s:rlog sep:" " s:rusr sep:" [" i,tim:time sep:"] \"" s,clf:req_line1 sep:" " s,clf:req_line2 sep:" " s,clf:req_line3 sep:"\" " i:res_status sep:" " i:res_size sep:" \"" s,clf:referrer sep:"\" \"" s,clf:user_agent sep:"\""' --overwrite
 
 echo "########################################"
 echo "####Command 3: show category summary####"
 ess summary log      
+
+echo "########################################"
+echo "####Command 4: show cat files###########"
+ess ls --cat=log      
 
 echo "########################################"
 echo "####Command 4: stream data to stdout####"
