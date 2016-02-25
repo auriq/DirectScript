@@ -50,11 +50,11 @@ ess category add ageregex 'dateformat/Dec-31-2015_age_gender.csv' --dateregex='[
 
 echo "#####################################################################"
 echo "####Command 11: create a category with a given dateregex formatter####"
-ess category add log 'dateformat/20140701000006am.log' --dateregex='[:%Y:][:%m:][:%d:]'
+ess category add log 'dateformat/20140701000006pm.log' --dateregex='[:%Y:][:%m:][:%d:]'
 
 echo "#####################################################################"
 echo "####Command 12: create a category with a given dateformat formatter####"
-ess category add log1 'dateformat/20140701000006am.log' --dateformat='YMD'
+ess category add log1 'dateformat/20140701000006pm.log' --dateformat='YMD'
 
 echo "####################################################"
 echo "####Command 13: create a category with preprocess####"                     
@@ -62,7 +62,7 @@ ess category add climate 'climate/01*.op' --dateregex='-[:%Y:]' --preprocess='lo
 
 echo "########################################################"
 echo "####Command 14: overwrite a category with preprocess####"                  
-ess category add log 'dateformat/20140701000006am.log' --dateregex='[:%Y:][:%m:][:%d:][:%H:][:%M:][:%S:][:%p:]' --preprocess='logcnv -f,eok,qui - -d ip:ip sep:" " s:rlog sep:" " s:rusr sep:" [" i,tim:time sep:"] \"" s,clf:req_line1 sep:" " s,clf:req_line2 sep:" " s,clf:req_line3 sep:"\" " i:res_status sep:" " i:res_size sep:" \"" s,clf:referrer sep:"\" \"" s,clf:user_agent sep:"\""' --overwrite
+ess category add log 'dateformat/20140701000006pm.log' --dateregex='[:%Y:][:%m:][:%d:][:%H:][:%M:][:%S:][:%p:]' --preprocess='logcnv -f,eok,qui - -d ip:ip sep:" " s:rlog sep:" " s:rusr sep:" [" i,tim:time sep:"] \"" s,clf:req_line1 sep:" " s,clf:req_line2 sep:" " s,clf:req_line3 sep:"\" " i:res_status sep:" " i:res_size sep:" \"" s,clf:referrer sep:"\" \"" s,clf:user_agent sep:"\""' --overwrite
 
 echo "############################################################################"
 echo "####Command 15: modify category column specific, make all column strings####"
