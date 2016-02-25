@@ -1,5 +1,7 @@
 #!/bin/bash
 ###a tutorial for s3 public data repository##################
+###essentia working directly on raw data in compressed or 
+###archived format###########################################
 ###AuriQ Systems provides a read-only key for demo purpose###
 
 echo "command 1: connecting to a working data repository"
@@ -26,18 +28,18 @@ echo "command 6: show category summary"
 ess summary climate
 
 ###SQL-query raw data#####
-echo "query category with tarred bz2 files"
+echo "command 7: query category with tarred bz2 files"
 ess query 'select count(distinct stn) from climate:*:*'
 
 ###streaming first few lines######
-echo "print out the first 10 lines of category"
-ess stream climate 1940-01-01 '*' 'head -10'
+echo "command 8: print out the first 5 lines of category"
+ess stream climate 1940-01-01 '*' 'head -5'
 
 ###write to a csv file###########
-echo "stream data to aq_pp for a csv output"
+echo "command 9: stream data to aq_pp for a csv output"
 ess stream climate '*' '*' 'aq_pp -f,+1r,eok - -d %cols -o climate.csv'
 
 ###show first 5 lines of climate.csv'
-echo "show the first 5 lines of output"
+echo "command 10: show the first 5 lines of output saved on local disk"
 ess select local
 ess cat /var/www/html/mydmp/aws/1/climate.csv --label local | head -5
