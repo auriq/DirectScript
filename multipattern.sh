@@ -10,6 +10,8 @@ echo $credenPath
 echo " "
 echo "#######################################################"
 
+ess purge asi-essentiapublic
+ 
 echo "#####################################################################"
 echo "command 1 ess select: connecting to a working data repository"
 ess select s3://asi-essentiapublic --credentials $credenPath/demo_essentiaPublic.csv
