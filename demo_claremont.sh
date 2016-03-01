@@ -3,9 +3,17 @@
 ###essentia working directly on raw data in compressed or 
 ###archived format###########################################
 ###AuriQ Systems provides a read-only key for demo purpose###
+
+######First, please dump credentials to the right path######
+echo "Please copy credential csv files to the following path"
+credenPath=`pwd`/.aws
+echo $credenPath
+echo " "
+echo "#######################################################"
+
 echo "#####################################################################"
 echo "command 1 ess select: connecting to a working data repository"
-ess select s3://asi-essentiapublic --aws_access_key AKIAJJ2NEBGDF7I7FVZA --aws_secret_access_key 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
+ess select s3://asi-essentiapublic --credentials $credenPath/demo_essentiaPublic.csv
 
 ####list files in home (root) directory#####
 echo "#####################################################################"
