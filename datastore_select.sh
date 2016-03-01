@@ -24,15 +24,7 @@ ess select s3://noaa-nexrad-level2 --credentials $credenPath/demo_essentiaPublic
 echo "command6: view noaa-nexrad data as if it is on a local drive"
 ess ls
 
-###select azure blob datastore#######
-
-echo "command7: add an azure blob bucket to datastore"
-ess select blob://indexdev --credentials $credenPath/cborys_azure.csv
-
-echo "command8: view blob datastore"
-ess ls
-
-echo "command9: switch back to s3 datastore"
+echo "command9: switch back to nasanex"         
 ess select nasanex   ##(equivalent to cd /path)
 
 echo "command10: view NASA NEX data as if it is on a local drive"
