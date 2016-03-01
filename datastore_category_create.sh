@@ -11,10 +11,12 @@
 
 echo "Command 1: delete a pre-existing datastore with the same name"
 ess purge asi-essentiapublic
+pwd
+ls ~
 
 echo "########################################"
 echo "####Command 2: select a s3 datastore####"
-ess select s3://asi-essentiapublic --credentials ~/.aws/demo_essentiaPublic.csv 
+ess select s3://asi-essentiapublic --credentials .aws/demo_essentiaPublic.csv 
 
 echo "#########################################################################"
 echo "####Command 3: list all files and directories in the parent directory####"
