@@ -11,8 +11,8 @@
 
 echo "Command 1: delete a pre-existing datastore with the same name"
 ess purge asi-essentiapublic
-pwd
-ls ~
+echo `pwd`
+echo `$HOME`
 
 echo "########################################"
 echo "####Command 2: select a s3 datastore####"
