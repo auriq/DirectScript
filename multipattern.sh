@@ -37,10 +37,10 @@ echo "command 5 ess summary multiDIY########################################"
 ess summary multiDIY
 
 ###list multiple patterns for category pattern exclusion#####################
-echo "command 4 ess category add: multiple patterns excluded#################"
-ess category add multiEXC 'diy_wood*' --exclude 'diy_woodworking/browse*[1-5]* diy_woodworking/purchase_2014090[6-8]*'
+echo "command 6 ess category add: multiple patterns excluded#################"
+ess category add multiEXC 'diy_wood*' --exclude 'diy_woodworking/browse_2014090[1-5]* diy_woodworking/purchase_2014090[6-8]*'
 
 ###show summary of the category#############################################
-echo "command 5 ess summary multiEXC########################################"
+echo "command 7 ess summary multiEXC########################################"
 ess summary multiEXC
 
