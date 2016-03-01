@@ -1,4 +1,4 @@
-######dump credentials to the write path######
+######dump credentials to the right path######
 echo "Please copy credential csv files to the following path"
 credenPath=`pwd`/.aws
 echo $credenPath
