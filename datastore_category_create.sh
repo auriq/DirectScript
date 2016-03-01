@@ -8,15 +8,17 @@
 ##5) how to create a category -- ess category add
 ##6) how to modify some category attributes -- ess category change
 ##7) how to summarize datastore, category -- ess summary
+#####first make sure credential csv file is saved######
+echo "credential csv files are saved here"
+credenPath=`pwd`/.aws
+echo $credenPath
 
 echo "Command 1: delete a pre-existing datastore with the same name"
 ess purge asi-essentiapublic
-echo `pwd`
-echo `$HOME`
 
 echo "########################################"
 echo "####Command 2: select a s3 datastore####"
-ess select s3://asi-essentiapublic --credentials .aws/demo_essentiaPublic.csv 
+ess select s3://asi-essentiapublic --credentials $credenPath/demo_essentiaPublic.csv 
 
 echo "#########################################################################"
 echo "####Command 3: list all files and directories in the parent directory####"
