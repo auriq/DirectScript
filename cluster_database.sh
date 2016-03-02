@@ -3,6 +3,13 @@
 ###examples on how to create database, import data into database####
 ###and manipulate, export data from database
 
+######First, please dump credentials to the right path######
+echo "Please copy credential csv files to the following path"
+credenPath=`pwd`/.aws
+echo $credenPath
+echo " "
+echo "#######################################################"
+
 ####set platform to cloud for cluster #############################
 echo "##############################################################"
 echo "command 1: set platform to cloud --required for cluster#######"
