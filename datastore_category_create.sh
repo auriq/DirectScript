@@ -1,20 +1,16 @@
 #!/bin/bash
 
-## This script demos:
-##1) how to purge a datastore - ess purge
-##2) how to choose a datastore - ess select
-##3) how to view files/directories in the selected datastore - ess ls
-##4) how to view a compressed file -- ess lsa
-##5) how to create a category -- ess category add
-##6) how to modify some category attributes -- ess category change
-##7) how to summarize datastore, category -- ess summary
+##1) purge a datastore - ess purge
+##2) choose a datastore - ess select
+##3) view files/directories in the selected datastore - ess ls
+##4) view a compressed file -- ess lsa
+##5) create a category -- ess category add
+##6) modify some category attributes -- ess category change
+##7) summarize datastore, category -- ess summary
 #####first make sure credential csv file is saved######
 echo "credential csv files are saved here"
 credenPath=`pwd`/.aws
 echo $credenPath
-
-echo "Command 1: delete a pre-existing datastore with the same name"
-ess purge asi-essentiapublic
 
 echo "########################################"
 echo "####Command 2: select a s3 datastore####"
@@ -46,23 +42,23 @@ ess lsa filetypes/climate.tar.bz2 --pattern '*011470*'
 
 echo "#########################################################"
 echo "####Command 9: create a category with default options####"            
-ess category add default 'climate'
+ess category add default 'climate' --overwrite
 
 echo "#####################################################################"
 echo "####Command 10: create a category with a given dateregex formatter####"
-ess category add ageregex 'dateformat/Dec-31-2015_age_gender.csv' --dateregex='[:%b:]-[:%d:]-[:%Y:]'
+ess category add ageregex 'dateformat/Dec-31-2015_age_gender.csv' --dateregex='[:%b:]-[:%d:]-[:%Y:]' --overwrite
 
 echo "#####################################################################"
 echo "####Command 11: create a category with a given dateregex formatter####"
-ess category add log 'dateformat/20140701000006pm.log' --dateregex='[:%Y:][:%m:][:%d:]'
+ess category add log 'dateformat/20140701000006pm.log' --dateregex='[:%Y:][:%m:][:%d:]' --overwrite
 
 echo "#####################################################################"
 echo "####Command 12: create a category with a given dateformat formatter####"
-ess category add log1 'dateformat/20140701000006pm.log' --dateformat='YMD'
+ess category add log1 'dateformat/20140701000006pm.log' --dateformat='YMD' --overwrite
 
 echo "####################################################"
 echo "####Command 13: create a category with preprocess####"                     
-ess category add climate 'climate/01*.op' --dateregex='-[:%Y:]' --preprocess='logcnv  -f,+1,eok - -d s,n=7,trm:stn s,n=7,trm:wban s,n=4,trm:year s,n=6,trm:moda s,n=7,trm:temp s,n=4,trm:Tobs s,n=7,trm:dewp s,n=4,trm:Dobs s,n=7,trm:slp s,n=4,trm:Sobs s,n=7,trm:stp s,n=4,trm:Pobs s,n=6,trm:visib s,n=4,trm:Vobs s,n=6,trm:wdsp s,n=4,trm:Wobs s,n=7,trm:mxspd s,n=7,trm:gust s,n=6,trm:max s,n=2,trm:xf s,n=6,trm:min s,n=2,trm:nf s,n=5,trm:prcp s,n=2,trm:pf s,n=7,trm:sndp s,n=6,trm:frshtt -o,notitle -'
+ess category add climate 'climate/01*.op' --dateregex='-[:%Y:]' --preprocess='logcnv  -f,+1,eok - -d s,n=7,trm:stn s,n=7,trm:wban s,n=4,trm:year s,n=6,trm:moda s,n=7,trm:temp s,n=4,trm:Tobs s,n=7,trm:dewp s,n=4,trm:Dobs s,n=7,trm:slp s,n=4,trm:Sobs s,n=7,trm:stp s,n=4,trm:Pobs s,n=6,trm:visib s,n=4,trm:Vobs s,n=6,trm:wdsp s,n=4,trm:Wobs s,n=7,trm:mxspd s,n=7,trm:gust s,n=6,trm:max s,n=2,trm:xf s,n=6,trm:min s,n=2,trm:nf s,n=5,trm:prcp s,n=2,trm:pf s,n=7,trm:sndp s,n=6,trm:frshtt -o,notitle -' --overwrite
 
 echo "########################################################"
 echo "####Command 14: overwrite a category with preprocess####"                  
