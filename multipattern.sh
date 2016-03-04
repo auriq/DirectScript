@@ -9,8 +9,6 @@ credenPath=`pwd`/.aws
 echo $credenPath
 echo " "
 echo "#######################################################"
-
-ess purge asi-essentiapublic
  
 echo "#####################################################################"
 echo "command 1 ess select: connecting to a working data repository"
@@ -32,7 +30,7 @@ ess lsa filetypes/climate.tar.bz2 --pattern '*0114* *0115*'
 
 ###list multiple patterns for category creation##############################
 echo "command 4 ess category add: multiple patterns included#################"
-ess category add multiDIY 'diy_woodworking/browse* diy_woodworking/purchase_2014090[6-8]*'
+ess category add multiDIY 'diy_woodworking/browse* diy_woodworking/purchase_2014090[6-8]*' --overwrite
 
 ###show summary of the category#############################################
 echo "command 5 ess summary multiDIY########################################"
@@ -40,7 +38,7 @@ ess summary multiDIY
 
 ###list multiple patterns for category pattern exclusion#####################
 echo "command 6 ess category add: multiple patterns excluded#################"
-ess category add multiEXC 'diy_wood*' --exclude 'diy_woodworking/browse_2014090[1-5]* diy_woodworking/purchase_2014090[6-8]*'
+ess category add multiEXC 'diy_wood*' --exclude 'diy_woodworking/browse_2014090[1-5]* diy_woodworking/purchase_2014090[6-8]*' --overwrite
 
 ###show summary of the category#############################################
 echo "command 7 ess summary multiEXC########################################"
