@@ -6,6 +6,6 @@ ess cluster create --num=2
 
 ess cluster status
 
-ess cluster stop
+ess cluster terminate
 
 
