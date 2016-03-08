@@ -58,4 +58,4 @@ ess stream climate '*' '*' 'aq_pp -f,+1r,eok - -d %cols -o climate.csv'
 echo "#####################################################################"
 echo "command 10 ess cat: show the first 5 lines of output saved on local disk"
 ess select local
-ess cat /var/www/html/mydmp/aws/1/climate.csv --label local | head -5
+ess cat /var/www/html/mydmp/aws/1/.job/climate.csv --label local | head -5
