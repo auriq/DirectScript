@@ -30,7 +30,7 @@ echo "####Command 5: stream data count lines####"
 ess stream log 2014-07-01 '*' 'wc -l'
 
 echo "################################################################################################"
-echo "####Command 6: stream data to csv file,saved in UI home directory: /var/www/html/mydmp/aws/1####"
+echo "####Command 6: stream data to csv file,saved in UI home directory: /var/www/html/mydmp/aws/1/.job####"
 ess stream log '*' '*' 'aq_pp -f,+1r,eok - -d %cols -o log.csv'
 
 
