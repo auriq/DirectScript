@@ -5,8 +5,7 @@
 
 ######First, please dump credentials to the right path######
 echo "Please copy credential csv files to the following path"
-credenPath=`pwd`/.aws
-echo $credenPath
+echo $ESS_AWS_DIR
 echo " "
 echo "#######################################################"
 
@@ -48,7 +47,7 @@ ess server summary
 
 echo "##############################################################"
 echo "command 9: connect to a s3 datastore##########################"
-ess select s3://asi-essentiapublic --credentials $credenPath/demo_essentiaPublic.csv
+ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPublic.csv
 
 echo "##############################################################"
 echo "command 10: create a category##################################"
