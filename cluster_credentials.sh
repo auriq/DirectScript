@@ -4,8 +4,9 @@
 #####please copy the file to $ESS_AWS_DIR###
 ############################################
 
-printf "%s %s" "Copy credentials to" $ESS_AWS_DIR"
+printf "%s %s" "Copy credentials to" $ESS_AWS_DIR
 
+echo "######setting up clusters#############"
 ess cluster set cloud
 
 ess cluster create --num=2 --credentials $ESS_AWS_DIR/credentials
