@@ -55,7 +55,7 @@ ess category add weatherdata 'climate/01*' --dateregex='-[:%Y:]' --preprocess 'l
 
 echo "##############################################################"
 echo "command 11: streaming category content to table1 in climate####"
-ess stream weatherdata "*" "*" "aq_pp -f,eok - -d %cols -eval s:artificial '\"%FILE\"+ToS(\$RowNum)' -udb -imp climate:table1"
+ess stream weatherdata "*" "*" "aq_pp -f,eok - -d %cols -eval s:artificial '\"%FILE\"+ToS(\\\$RowNum)' -udb -imp climate:table1"
 
 echo "##############################################################"
 echo "command 12: export data to local disk##########################"
