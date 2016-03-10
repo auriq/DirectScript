@@ -59,3 +59,6 @@ echo "#####################################################################"
 echo "command 10 ess cat: show the first 5 lines of output saved on local disk"
 ess select local
 ess cat /var/www/html/mydmp/aws/1/.job/climate.csv --label local | head -5
+
+###delete demo output################
+rm /var/www/html/mydmp/aws/1/.job/climate.csv
