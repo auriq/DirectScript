@@ -1,15 +1,19 @@
 #!/bin/bash
 
-#####This cluster set up only works####
-#####if instance is launched with IAM##
-#####roles, otherwise, please using ###
-#####cluster_credential.sh#############
+#####this cluster set up assume your instance######
+#####is launched with IAM ROlES, if not, please####
+#####see cluster_credentials.sh####################
+
+echo "####command1: setting up clusters##########################"
 ess cluster set cloud
 
+echo "####command2: setting up clusters##########################"
 ess cluster create --num=2 
 
+echo "####command3: check cluster status#########################"
 ess cluster status
 
+echo "####command4: terminate clusters###########################"
 ess cluster terminate
 
 
