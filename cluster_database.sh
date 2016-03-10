@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ###examples on how to create database, import data into database####
-###and manipulate, export data from database
+###and manipulate, export data from database, cluster set up assue##
+###there is an attached IAM role####################################
 
 ######First, please dump credentials to the right path######
 echo "Please copy credential csv files to the following path"
@@ -69,4 +70,7 @@ echo "##############################################################"
 echo "command 14: stop server########################################"
 ess udbd stop
 
+echo "##############################################################"
+echo "command 15: delete demo output#################################"
+rm climatedata.csv
 ess cluster terminate
