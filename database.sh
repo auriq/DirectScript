@@ -47,3 +47,8 @@ head -5 climatedata.csv
 echo "##############################################################"
 echo "command 11: stop server########################################"
 ess udbd stop
+
+echo "##############################################################"
+echo "command 12: delete demo output#################################"
+rm /var/www/html/mydmp/aws/1/.job/climatedata.csv
+
