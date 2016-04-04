@@ -11,7 +11,7 @@ ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPubli
 
 echo "####################################"
 echo "####Command 2: create a category####"
-ess category add log 'dateformat/2014*' --dateregex=[:%Y:][:%m:][:%d:][:%H:][:%M:][:%S:][:%p:]* --preprocess='logcnv -f,eok,qui - -d ip:ip sep:" " s:rlog sep:" " s:rusr sep:" [" i,tim:time sep:"] \"" s,clf:req_line1 sep:" " s,clf:req_line2 sep:" " s,clf:req_line3 sep:"\" " i:res_status sep:" " i:res_size sep:" \"" s,clf:referrer sep:"\" \"" s,clf:user_agent sep:"\""' --overwrite
+ess category add log 'dateformat/2014*' --dateregex=[:%Y:][:%m:][:%d:][:%H:][:%M:][:%S:][:%p:]* --preprocess="logcnv -f,eok,qui - -d ip:ip sep:' ' s:rlog sep:' ' s:rusr sep:' [' i,tim:time sep:'] \"' s,clf:req_line1 sep:' ' s,clf:req_line2 sep:' ' s,clf:req_line3 sep:'\" ' i:res_status sep:' ' i:res_size sep:' \"' s,clf:referrer sep:'\" \"' s,clf:user_agent sep:'\"'" --overwrite
 
 echo "########################################"
 echo "####Command 3: show category summary####"
