@@ -52,7 +52,7 @@ ess stream climate 1940-01-01 '*' 'head -5'
 ###write to a csv file###########
 echo "#####################################################################"
 echo "command 9 ess stream '*' '*' 'aq_pp...': stream data to aq_pp,output .csv"
-ess stream climate '*' '*' 'aq_pp -f,+1r,eok - -d %cols -o climate.csv'
+ess stream climate '*' '*' 'aq_pp -f,+1r,eok - -d %cols -o climate.csv' --master
 
 ###show first 5 lines of climate.csv'
 echo "#####################################################################"
