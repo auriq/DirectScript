@@ -6,6 +6,9 @@ echo $ESS_AWS_DIR
 echo " "
 echo "#######################################################"
 
+echo "set cluster to local mode"
+ess cluster set local
+
 echo "####Command 1: select a s3 datastore####"
 ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPublic.csv
 
