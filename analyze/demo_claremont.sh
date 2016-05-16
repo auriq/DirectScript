@@ -10,6 +10,9 @@ echo $ESS_AWS_DIR
 echo " "
 echo "#######################################################"
 
+echo "set cluster to local mode"
+ess cluster set local
+
 echo "#####################################################################"
 echo "command 1 ess select: connecting to a working data repository"
 ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPublic.csv
