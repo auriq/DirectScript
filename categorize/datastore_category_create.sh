@@ -7,13 +7,10 @@
 ##5) create a category -- ess category add
 ##6) modify some category attributes -- ess category change
 ##7) summarize datastore, category -- ess summary
-#####first make sure credential csv file is saved######
-echo "credential csv files are saved here"
-echo $ESS_AWS_DIR
 
 echo "########################################"
 echo "####Command 2: select a s3 datastore####"
-ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPublic.csv 
+ess select s3://asi-essentiapublic 
 
 echo "#########################################################################"
 echo "####Command 3: list all files and directories in the parent directory####"
