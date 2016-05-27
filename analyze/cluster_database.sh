@@ -4,10 +4,6 @@
 ###and manipulate, export data from database, cluster set up assue##
 ###there is an attached IAM role####################################
 
-######First, please dump credentials to the right path######
-echo "Please copy credential csv files to the following path"
-echo $ESS_AWS_DIR
-echo " "
 echo "#######################################################"
 
 ####set platform to cloud for cluster #############################
@@ -48,7 +44,7 @@ ess server summary
 
 echo "##############################################################"
 echo "command 9: connect to a s3 datastore##########################"
-ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPublic.csv
+ess select s3://asi-essentiapublic 
 
 echo "##############################################################"
 echo "command 10: create a category##################################"

@@ -26,7 +26,7 @@ ess server summary
 
 echo "##############################################################"
 echo "command 6: connect to a s3 datastore##########################"
-ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPublic.csv
+ess select s3://asi-essentiapublic 
 
 echo "##############################################################"
 echo "command 7: create a category##################################"

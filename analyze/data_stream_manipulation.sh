@@ -1,16 +1,11 @@
 #!/bin/bash
 
-######First, please dump credentials to the right path######
-echo "Please copy credential csv files to the following path"
-echo $ESS_AWS_DIR
-echo " "
-echo "#######################################################"
 
 echo "set cluster to local mode"
 ess cluster set local
 
 echo "####Command 1: select a s3 datastore####"
-ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPublic.csv
+ess select s3://asi-essentiapublic
 
 echo "####################################"
 echo "####Command 2: create a category####"

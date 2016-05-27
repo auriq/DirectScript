@@ -2,20 +2,13 @@
 ###a tutorial for s3 public data repository##################
 ###essentia working directly on raw data in compressed or 
 ###archived format###########################################
-###AuriQ Systems provides a read-only key for demo purpose###
-
-######First, please dump credentials to the right path######
-echo "Please copy credential csv files to the following path"
-echo $ESS_AWS_DIR
-echo " "
-echo "#######################################################"
 
 echo "set cluster to local mode"
 ess cluster set local
 
 echo "#####################################################################"
 echo "command 1 ess select: connecting to a working data repository"
-ess select s3://asi-essentiapublic --credentials $ESS_AWS_DIR/demo_essentiaPublic.csv
+ess select s3://asi-essentiapublic 
 
 ####list files in home (root) directory#####
 echo "#####################################################################"
